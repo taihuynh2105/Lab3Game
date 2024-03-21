@@ -38,21 +38,23 @@ public class SquareController : MonoBehaviour
         int currentSceneIndex= SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex+1);
     }
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.gameObject.name.Equals("Circle"))
+        if (collision.gameObject.tag.Equals("Circle"))
         {
-            Debug.Log("aloalo");
-            Vector2 firstPosition = new Vector2(-9.69f, 0.01f);
-            transform.position=firstPosition;
+            Debug.Log("Lose");
+            Vector2 fistPosition = new Vector2(-9, 1);
+            transform.position = fistPosition;
         }
-        if (col.gameObject.name.Equals("Box"))
+        if (collision.gameObject.name.Equals("Box"))
         {
-            Debug.Log("YOU WIN");
+            Debug.Log("Win");
             LoadNextScene();
-            
+        }
+        if (collision.gameObject.tag.Equals("Pinwheel"))
+        {
+            Vector2 fistPosition = new Vector2(-9, 0);
+            transform.position = fistPosition;
         }
     }
-
-   
 }
