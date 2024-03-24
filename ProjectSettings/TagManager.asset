@@ -7,6 +7,9 @@ TagManager:
   - Square
   - Circle
   - Pinwheel
+  - Crossbar
+  - Star
+  - Shuriken
   layers:
   - Default
   - TransparentFX
@@ -61,4 +64,13 @@ TagManager:
     locked: 0
   - name: Pinwheel
     uniqueID: 2557230037
+    locked: 0
+  - name: Crossbar
+    uniqueID: 1316011271
+    locked: 0
+  - name: Star
+    uniqueID: 3497865405
+    locked: 0
+  - name: Shuriken
+    uniqueID: 3452655221
     locked: 0

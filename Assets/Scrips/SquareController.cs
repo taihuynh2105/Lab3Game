@@ -9,6 +9,7 @@ public class SquareController : MonoBehaviour
     // Start is called before the first frame update
     public float timeRemaining = 60;
     public Text countdownText;
+    
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class SquareController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 movement=new Vector3 (horizontal, vertical, 0f).normalized;
-        transform.Translate(movement * 3f * Time.deltaTime  );
+        transform.Translate(movement * 4f * Time.deltaTime);
     }
     public void LoadNextScene()
     {
@@ -56,5 +57,21 @@ public class SquareController : MonoBehaviour
             Vector2 fistPosition = new Vector2(-9, 0);
             transform.position = fistPosition;
         }
+        if (collision.gameObject.tag.Equals("Crossbar"))
+        {
+            Vector2 fistPosition = new Vector2(-9, 0);
+            transform.position = fistPosition;
+        }
+        if (collision.gameObject.tag.Equals("Star"))
+        {
+            Vector2 fistPosition = new Vector2(-9, 0);
+            transform.position = fistPosition;
+        }
+        if (collision.gameObject.tag.Equals("Shuriken"))
+        {
+            Vector2 fistPosition = new Vector2(-9, 0);
+            transform.position = fistPosition;
+        }
+
     }
 }
