@@ -581,9 +581,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1880307345}
   - component: {fileID: 1880307344}
+  - component: {fileID: 1880307346}
   m_Layer: 0
-  m_Name: Map
-  m_TagString: Untagged
+  m_Name: MapScene1
+  m_TagString: MapEdge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -655,6 +656,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1880307346
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880307343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.4632235, y: -0.6324899}
+  - {x: -2.4619899, y: 1.0119838}
+  - {x: -1.6017659, y: 1.0159948}
+  - {x: -1.6243253, y: -0.36903125}
+  - {x: -1.360246, y: -0.36433923}
+  - {x: -1.3724594, y: 0.71130764}
+  - {x: 1.1338933, y: 0.7167899}
+  - {x: 1.1411949, y: 1.0247304}
+  - {x: 2.5419552, y: 1.0020347}
+  - {x: 2.5554564, y: -0.6389506}
+  - {x: 1.6925122, y: -0.6568023}
+  - {x: 1.6875191, y: 0.7596574}
+  - {x: 1.3972714, y: 0.74941033}
+  - {x: 1.4148785, y: -0.3694874}
+  - {x: -1.0737889, y: -0.3891223}
+  - {x: -1.0733202, y: -0.6733961}
+  - {x: -2.4795942, y: -0.6696951}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1921529302
 GameObject:
   m_ObjectHideFlags: 0

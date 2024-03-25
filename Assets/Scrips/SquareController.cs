@@ -72,6 +72,17 @@ public class SquareController : MonoBehaviour
             Vector2 fistPosition = new Vector2(-9, 0);
             transform.position = fistPosition;
         }
+        
 
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("MapEdge"))
+        {
+            Debug.Log("xxxx");
+            Vector2 fistPosition = new Vector2(-9, 0);
+            transform.position = fistPosition;
+
+        }
     }
 }
