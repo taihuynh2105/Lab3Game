@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
+    public Text scoreText;
     private static ScoreController instance;
     public static ScoreController Instance
     {
@@ -20,7 +22,7 @@ public class ScoreController : MonoBehaviour
     public void IncreaseScore(int value) 
     {
         score += value;
-        Debug.Log("Score Increased!! New Score: " + score);
+        scoreText.text = "Score: "+ score.ToString();
     }
 
     

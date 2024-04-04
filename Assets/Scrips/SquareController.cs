@@ -10,28 +10,29 @@ public class SquareController : MonoBehaviour
     public float timeRemaining = 60;
     public Text countdownText;
     public float moveSpeed = 5f;
-
+    // Start is called before the first frame update
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10f;
-    private Vector2 shootDirection;
-    
+    public float bulletSpeed;
 
+    private Vector2 shootDirection;
     void Start()
     {
         StartCoroutine(Countdown());
-    }
+        bulletSpeed = 10f;
 
-    // Update is called once per frame
+
+    }
     IEnumerator Countdown()
     {
         while (timeRemaining > 0)
         {
-            yield return new WaitForSeconds(1) ;
+            yield return new WaitForSeconds(1);
             timeRemaining--;
             countdownText.text = "Time: " + timeRemaining.ToString();
         }
-        countdownText.text = "Time Over!!";
+        countdownText.text = "Time's up!";
     }
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -70,58 +71,50 @@ public class SquareController : MonoBehaviour
                 transform.Translate(-moveDirection * moveSpeed * Time.deltaTime);
             }
         }
+
+
     }
     public void LoadNextScene()
     {
-        int currentSceneIndex= SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex+1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Circle"))
         {
-            Debug.Log("Lose");
-            Vector2 fistPosition = new Vector2(-9, 1);
+
+            Vector2 fistPosition = new Vector2(-8, 1);
             transform.position = fistPosition;
+
         }
         if (collision.gameObject.name.Equals("Box"))
         {
-            Debug.Log("Win");
+            Debug.Log("hello");
             LoadNextScene();
+
         }
         if (collision.gameObject.tag.Equals("Pinwheel"))
         {
-            Vector2 fistPosition = new Vector2(-9, 0);
+
+            Vector2 fistPosition = new Vector2(-9, 1);
             transform.position = fistPosition;
+
         }
-        if (collision.gameObject.tag.Equals("Crossbar"))
-        {
-            Vector2 fistPosition = new Vector2(-9, 0);
-            transform.position = fistPosition;
-        }
-        if (collision.gameObject.tag.Equals("Star"))
-        {
-            Vector2 fistPosition = new Vector2(-9, 0);
-            transform.position = fistPosition;
-        }
-        if (collision.gameObject.tag.Equals("Shuriken"))
-        {
-            Vector2 fistPosition = new Vector2(-9, 0);
-            transform.position = fistPosition;
-        }
-        
+
 
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("MapEdge"))
-        {
-            Debug.Log("xxxx");
-            Vector2 fistPosition = new Vector2(-9, 0);
-            transform.position = fistPosition;
 
+        if (collision.CompareTag("MapEdge")) // Kiểm tra xem collider khác có phải là viền bản đồ không
+        {
+            // Dừng di chuyển của GameObject khi va chạm vào viền bản đồ
+            Vector2 fistPosition = new Vector2(-9, 1);
+            transform.position = fistPosition;
         }
     }
+
     void Shoot()
     {
         GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -132,4 +125,5 @@ public class SquareController : MonoBehaviour
             bulletRb.velocity = shootDirection * bulletSpeed;  // Bắn theo hướng "up" của GameObject
         }
     }
+
 }
