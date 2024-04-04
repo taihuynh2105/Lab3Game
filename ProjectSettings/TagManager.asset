@@ -11,6 +11,7 @@ TagManager:
   - Star
   - Shuriken
   - MapEdge
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -74,4 +75,7 @@ TagManager:
     locked: 0
   - name: Shuriken
     uniqueID: 3452655221
+    locked: 0
+  - name: Menu
+    uniqueID: 2348307149
     locked: 0
