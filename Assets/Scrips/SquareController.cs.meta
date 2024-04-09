@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - countdownText: {instanceID: 0}
   - bulletPrefab: {fileID: 1626382422608420515, guid: 12c3647bdc8a67543af1b898a28efd53, type: 3}
+  - playerData: {fileID: 11400000, guid: dfc3ac8526c523547b0f3465d047e622, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

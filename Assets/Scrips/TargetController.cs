@@ -5,14 +5,15 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
+            Debug.Log("va cham bullet");
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
         
     }
 }

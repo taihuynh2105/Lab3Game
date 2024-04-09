@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1626382422608420512}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,4 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df205ffdad03ae4c9aaf626ee599f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: dfc3ac8526c523547b0f3465d047e622, type: 2}
   scoreValue: 10
